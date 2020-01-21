@@ -1,0 +1,194 @@
+﻿iso_code,country,capital
+AFG,Afghanistan,Kabul
+ALB,Albania,Tirana
+DZA,Algeria,Algiers
+AND,Andorra,Andorra la Vella
+AGO,Angola,Luanda
+ATG,Antigua and Barbuda,St. John's
+ARG,Argentina,Buenos Aires
+ARM,Armenia,Yerevan
+AUS,Australia,Canberra
+AUT,Austria,Vienna
+AZE,Azerbaijan,Baku
+BHS,Bahamas,Nassau
+BHR,Bahrain,Manama
+BGD,Bangladesh,Dhaka
+BRB,Barbados,Bridgetown
+BLR,Belarus,Minsk
+BEL,Belgium,Brussels
+BLZ,Belize,Belmopan
+BEN,Benin,Porto Novo
+BTN,Bhutan,Thimphu
+BOL,Bolivia,Sucre
+BIH,Bosnia and Herzegovina,Sarajevo
+BWA,Botswana,Gaborone
+BRA,Brazil,Brasilia
+BRN,Brunei,Bandar Seri Begawan
+BGR,Bulgaria,Sofia
+BFA,Burkina Faso,Ouagadougou
+BDI,Burundi,Bujumbura
+KHM,Cambodia,Phnom Penh
+CMR,Cameroon,Yaoundé
+CAN,Canada,Ottawa
+CPV,Cape Verde,Praia
+CAF,Central African Republic,Bangui
+TCD,Chad,N'Djamena
+CHL,Chile,Santiago
+CHN,China,Beijing
+COL,Colombia,Bogota
+COM,Comoros,Moroni
+CRI,Costa Rica,San José
+HRV,Croatia,Zagreb
+CUB,Cuba,Havana
+CYP,Cyprus,Nicosia
+CZE,Czech Republic,Prague
+COD,Democratic Republic of Congo,Kinshasa
+DNK,Denmark,Copenagen
+DJI,Djibouti,Djibouti
+DMA,Dominica,Roseau
+DOM,Dominican Republic,Santo Domingo
+TLS,East Timor,Dili
+ECU,Ecuador,Quito
+EGY,Egypt,Cairo
+SLV,El Salvador,San Salvador
+GNQ,Equatorial Guinea,Malabo
+ERI,Eritrea,Asmara
+EST,Estonia,Tallinn
+ETH,Ethiopia,Addis Ababa
+FJI,Fiji,Suva
+FIN,Finland,Helsinki
+FRA,France,Paris
+GAB,Gabon,Libreville
+GMB,Gambia,Banjul
+GEO,Georgia,Tbilisi
+DEU,Germany,Berlin
+GHA,Ghana,Accra
+GRC,Greece,Athens
+GRD,Grenada,St. George's
+GTM,Guatemala,Guatemala City
+GIN,Guinea,Conakry
+GNB,Guinea-Bissau,Bissau
+GUY,Guyana,Georgetown
+HTI,Haiti,Port-au-Prince
+HND,Honduras,Tegucigalpa
+HUN,Hungary,Budapest
+ISL,Iceland,Reykjavík
+IND,India,New Delhi
+IDN,Indonesia,Jakarta
+IRN,Iran,Tehran
+IRQ,Iraq,Baghdad
+IRL,Ireland,Dublin
+ISR,Israel,Jerusalem
+ITA,Italy,Rome
+CIV,Ivory Coast,Yamoussoukro
+JAM,Jamaica,Kingston
+JPN,Japan,Tokyo
+JOR,Jordan,Amman
+KAZ,Kazakhstan,Astana
+KEN,Kenya,Nairobi
+KIR,Kiribati,Tarawa
+PRK,"Korea, North",Pyongyang
+KOR,"Korea, South",Seoul
+KWT,Kuwait,Kuwait City
+KGZ,Kyrgyzstan,Bishkek
+LAO,Laos,Vientiane
+LVA,Latvia,Riga
+LBN,Lebanon,Beirut
+LSO,Lesotho,Maseru
+LBR,Liberia,Monrovia
+LBY,Libya,Tripoli
+LIE,Liechtenstein,Vaduz
+LTU,Lithuania,Vilnius
+LUX,Luxembourg,Luxembourg
+MKD,Macedonia,Skopje
+MDG,Madagascar,Antananarivo
+MWI,Malawi,Lilongwe
+MYS,Malaysia,Kuala Lumpur
+MDV,Maldives,Malé
+MLI,Mali,Bamako
+MLT,Malta,Valletta
+MHL,Marshall Islands,Majuro
+MRT,Mauritania,Nouakchott
+MUS,Mauritius,Port Louis
+MEX,Mexico,Mexico City
+FSM,Micronesia,Palikir
+MDA,Moldova,Chisinau
+MCO,Monaco,Monaco
+MNG,Mongolia,Ulaanbaatar
+MNE,Montenegro,Podgorica
+MAR,Morocco,Rabat
+MOZ,Mozambique,Maputo
+MMR,Myanmar,Naypyidaw
+NAM,Namibia,Windhoek
+NRU,Nauru,Yaren
+NPL,Nepal,Kathmandu
+NLD,Netherlands,Amsterdam
+NZL,New Zealand,Wellington
+NIC,Nicaragua,Managua
+NER,Niger,Niamey
+NGA,Nigeria,Abuja
+NOR,Norway,Oslo
+OMN,Oman,Muscat
+PAK,Pakistan,Islamabad
+PLW,Palau,Melekeok
+PSE,Palestine,East Jerusalem
+PAN,Panama,Panama City
+PNG,Papua New Guinea,Port Moresby
+PRY,Paraguay,Asunción
+PER,Peru,Lima
+PHL,Philippines,Manila
+POL,Poland,Warsaw
+PRT,Portugal,Lisbon
+QAT,Qatar,Doha
+COG,Republic of the Congo,Brazzaville
+ROU,Romania,Bucharest
+RUS,Russia,Moscow
+RWA,Rwanda,Kigali
+KNA,Saint Kitts and Nevis,Basseterre
+LCA,Saint Lucia,Castries
+VCT,Saint Vincent and the Grenadines,Kingstown
+WSM,Samoa,Apia
+SEN,Senegal,Dakar
+SRB,Serbia,Belgrade
+SYC,Seychelles,Victoria
+SLE,Sierra Leone,Freetown
+SGP,Singapore,Singapore
+SVK,Slovakia,Bratislava
+SVN,Slovenia,Ljubljana
+SLB,Solomon Islands,Honiara
+SOM,Somalia,Mogadishu
+ZAF,South Africa,Pretoria
+SSD,South Sudan,Juba
+ESP,Spain,Madrid
+LKA,Sri Lanka,Sri Jayawardenapura Kotte
+SDN,Sudan,Khartoum
+SUR,Suriname,Paramaribo
+SWZ,Swaziland,Mbabane
+SWE,Sweden,Stockholm
+CHE,Switzerland,Bern
+SYR,Syria,Damascus
+TWN,Taiwan,Taipei
+TJK,Tajikistan,Dushanbe
+TZA,Tanzania,Dodoma
+THA,Thailand,Bangkok
+TGO,Togo,Lomé
+TON,Tonga,Nukualofa
+TTO,Trinidad and Tobago,Port of Spain
+TUN,Tunisia,Tunis
+TUR,Turkey,Ankara
+TKM,Turkmenistan,Ashgabat
+TUV,Tuvalu,Funafuti
+UGA,Uganda,Kampala
+UKR,Ukraine,Kiev
+ARE,United Arab Emirates,Abu Dhabi
+GBR,United Kingdom,London
+USA,United States,Washington D.C.
+URY,Uruguay,Montevideo
+UZB,Uzbekistan,Tashkent
+VUT,Vanuatu,Port Vila
+VAT,Vatican City,Vatican City
+VEN,Venezuela,Caracas
+VNM,Vietnam,Hanoi
+YEM,Yemen,Sana'a
+ZMB,Zambia,Lusaka
+ZWE,Zimbabwe,Harare
