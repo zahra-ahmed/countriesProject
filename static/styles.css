@@ -14,7 +14,7 @@ h3 {
 /* Giving our navbar some padding and a background color */
 .navbar {
   padding: 20px;
-  background: #5191fd;
+  background:#AFB3B3;
 }
 
 /* Making our navbar li's inline-block elements this makes it so we can have multiple on the same line. Floats could have been used too */
@@ -23,7 +23,6 @@ h3 {
   padding: 20px;
   margin-right: 10px;
   margin-left: 10px;
-  cursor: pointer;
   background: #fff;
   border-radius: 3px;
 }
@@ -48,13 +47,9 @@ h3 {
   text-align: center;
 }
 
-/* Giving the .post element margin on 3 sides */
-.post {
-  margin-top: 50px;
-  margin-right: 100px;
-  margin-left: 100px;
-}
 
 .content-wrapper {
   padding: 50px;
 }
+
+

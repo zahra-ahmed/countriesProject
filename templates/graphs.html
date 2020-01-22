@@ -13,10 +13,10 @@
             <a class="navbar-brand" href="/" >Economic Development Comparison</a>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">    
+                <ul class="navbar-nav ml-auto">  
                     <li class="nav-item">
                         <a class="nav-link" href ="/">Welcome</a>
-                    </li>
+                    </li>  
                     <li class="nav-item">
                         <a class="nav-link" href ="/graphs">Economic Development</a>
                     </li>
@@ -31,17 +31,44 @@
     
     <div class="container content-wrapper">
         <div class="row">
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src= "../static/students.jpg">
+            <div class="col-md-12">
+                
+                <div class="well">
+                    <h5>Country</h5>
+                    <select id="selDataset" onchange="onCountryChange(value)"></select>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div id="plot1">
+                    <canvas id="barGraph" width="400" height="400"></canvas>
                 </div>
             </div>
 
-        <div class="col-md-12">
-            <h5>Welcome!</h5>
-            <p>Story</p>
-            <p>Story </p>
-            <p>Story</p>
+            
+        <div class="col-md-6">
+            <div id="plot2">
+                <canvas id="lineAreaGraph" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+        
+    <hr>
+    <div class="row">
+        
+        <div class="col-md-6">
+            <div id="plot3">
+                <canvas id="lineGraph" width="400" height="400"></canvas>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div id="plot4">
+                <canvas id="pieGraph" width="400" height="400"></canvas>
+            </div>
         </div>
     </div>
             

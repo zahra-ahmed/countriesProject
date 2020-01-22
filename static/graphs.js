@@ -1,61 +1,112 @@
-let selectedCountry, selectedGdpPcCountry
+let gdp_data, gdp_pc_data, labor_data, literacy_data, rural_data
+let selectedCountry, selectedGdpPcCountry, laborCountry
 let barGraph, lineGraph, lineAreaGraph, pieGraph
+const GDP_DATA_INDEX = 0
+const GDP_PER_CAPITA_INDEX = 1
 
 $(document).ready(init);
 
-function fetchData() {
-  const url = 'http://127.0.0.1:5000/api/gdp'
-//   d3.json(url).then(data => {
-//   console.log(data);
-// });
-console.log(d3)
-}
-
-
 function init() {
-  initCountries()
-  initCharts()
-  createSelectOptions()
-  fetchData()
+  const url = 'http://127.0.0.1:5000/api/gdp'
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      gdp_data = data
+      initCountries()
+      initCharts()
+      createSelectOptions()
+    })
+  const url1 = 'http://127.0.0.1:5000/api/gdp_pc'
+  fetch(url1)
+    .then(res => res.json())
+    .then(data => {
+      gdp_pc_data = data
+      initCountries()
+      initCharts()
+      createSelectOptions()
+    })
+  const url2 = 'http://127.0.0.1:5000/api/labor_force'
+  fetch(url2)
+    .then(res => res.json())
+    .then(data => {
+      labor_data = data
+      initCountries()
+      initCharts()
+      createSelectOptions()
+    })
+  const url3 = 'http://127.0.0.1:5000/api/literacy_rate'
+  fetch(url3)
+    .then(res => res.json())
+    .then(data => {
+      literacy_data = data
+      initCountries()
+      initCharts()
+      createSelectOptions()
+    })
+  const url4 = 'http://127.0.0.1:5000/api/rural_population'
+  fetch(url4)
+    .then(res => res.json())
+    .then(data => {
+      rural_data = data
+      initCountries()
+      initCharts()
+      createSelectOptions()
+    })
 }
+
 
 function initCountries() {
   selectedCountry = gdp_data[0]
-  selectedGdpPcCountry = gdp_ppp_data[0]
+  selectedGdpPcCountry = gdp_pc_data[0]
+  laborCountry = labor_data[0]
+  literacyCountry = literacy_data[0]
+  ruralCountry = rural_data[0]
 }
 
 function onCountryChange(iso_code) {
-updateCountries() 
-updateCharts()
+  updateCountries(iso_code)
+  updateCharts()
 }
 
-function updateCountries() {
+function updateCountries(iso_code) {
   selectedCountry = gdp_data.find(row => row.iso_code === iso_code)
-  selectedGdpPcCountry = gdp_ppp_data.find(row => row.iso_code === iso_code)
+  selectedGdpPcCountry = gdp_pc_data.find(row => row.iso_code === iso_code)
+  laborCountry = labor_data.find(row => row.iso_code === iso_code)
+  literacyCountry = literacy_data.find(row => row.iso_code === iso_code)
+  ruralCountry = rural_data.find(row => row.iso_code === iso_code)
+
 }
+
 
 function updateCharts() {
   lineAreaGraph.data.labels = getGdpYears()
-  lineAreaGraph.data.datasets[0].data = getGDP()
-  lineAreaGraph.data.datasets[1].data = getGdpPerCapita()
+  lineAreaGraph.data.datasets[GDP_DATA_INDEX].data = getGDP()
+  lineAreaGraph.data.datasets[GDP_PER_CAPITA_INDEX].data = getGdpPerCapita()
   lineAreaGraph.options.title.text = `GDP and GDP per capita for ${selectedCountry.country}`
+  lineGraph.data.datasets[GDP_DATA_INDEX].data = getLiteracy()
+  barGraph.data.datasets[GDP_DATA_INDEX].data = getRural()
+  barGraph.data.datasets[GDP_PER_CAPITA_INDEX].data = getUrban()
+  pieGraph.data.datasets[GDP_DATA_INDEX].data = [100-laborCountry[2018], laborCountry[2018]]
   lineAreaGraph.update()
+  lineGraph.update()
+  barGraph.update()
+  pieGraph.update()
 }
 
 function initCharts() {
   barGraph = new Chart(document.getElementById("barGraph"), {
     type: 'bar',
     data: {
-      labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+      labels: getGdpYears(),
       datasets: [
         {
           label: "Rural Population",
-          backgroundColor: "#3e95cd",
-          data: [133, 221, 783, 2478, 133, 221, 783, 2478, 133, 221, 783, 2478, 133, 221, 783, 2478, 133, 221]
+          backgroundColor: "#7FE1DF",
+          data: getRural(),
         }, {
           label: "Urban Population",
-          backgroundColor: "#8e5ea2",
-          data: [408, 547, 675, 734, 133, 221, 783, 2478, 133, 221, 783, 2478, 133, 221, 133, 221, 783, 2478]
+          backgroundColor: "#E19852",
+          data: getUrban()
         }
       ]
     },
@@ -72,11 +123,11 @@ function initCharts() {
   lineGraph = new Chart(document.getElementById("lineGraph"), {
     type: 'line',
     data: {
-      labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+      labels: getGdpYears(),
       datasets: [{
-        data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478, 86, 114, 106, 106, 107, 111, 133, 221],
+        data: getLiteracy(),
         label: "Literacy Rate (%)",
-        borderColor: "#3e95cd",
+        borderColor: "#1EE17C",
         fill: false
       }
       ]
@@ -95,20 +146,20 @@ function initCharts() {
       labels: getGdpYears(),
       datasets: [
         {
-        label: selectedCountry.country,
-        type: "bar",
-        borderColor: "#8e5ea2",
-        data: getGDP(),
-        fill: false
-      },
+          label: selectedCountry.country,
+          type: "bar",
+          borderColor: "#8e5ea2",
+          data: getGDP(),
+          fill: false
+        },
         {
-        label: selectedCountry.country,
-        type: "line",
-        borderColor: "#8e5ea2",
-        data: getGdpPerCapita(),
-        fill: false
-      }
-      
+          label: selectedCountry.country,
+          type: "line",
+          borderColor: "#E11208",
+          data: getGdpPerCapita(),
+          fill: false
+        }
+
       ]
     },
     options: {
@@ -126,8 +177,8 @@ function initCharts() {
       labels: ["Men", "Women"],
       datasets: [{
         label: "Labor Force (%)",
-        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-        data: [60, 40]
+        backgroundColor: ["#C2E1B8", "#E1D04D"],
+        data: [100-laborCountry[2018], laborCountry[2018]]
       }]
     },
     options: {
@@ -173,7 +224,7 @@ function getGdpYears() {
 
 
 function getGDP() {
-  let gdpValues = getGdpYears().map(year => selectedCountry[year]/10000000)
+  let gdpValues = getGdpYears().map(year => selectedCountry[year] / 1000000)
   return gdpValues
 }
 
@@ -181,5 +232,26 @@ function getGdpPerCapita() {
   let gdpPCValues = getGdpYears().map(year => selectedGdpPcCountry[year])
   return gdpPCValues
 }
+
+function getLiteracy() {
+  let literacyValues = getGdpYears().map(year => literacyCountry[year])
+  return literacyValues
+}
+
+function getRural() {
+  let ruralValues = getGdpYears().map(year => ruralCountry[year])
+  return ruralValues
+}
+function getUrban() {
+  let urbanValues = getGdpYears().map(year => 100 - ruralCountry[year])
+  return urbanValues
+}
+
+function getLabor() {
+  let laborValues = getGdpYears(2018).map(year => laborCountry[year])
+  return laborValues
+}
+
+
 
 
