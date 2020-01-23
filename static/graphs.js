@@ -114,6 +114,17 @@ function initCharts() {
       title: {
         display: true,
         text: 'Urban vs. Rural Population'
+      },
+      scales: {
+        yAxes: [
+          {
+            ticks: {beginAtZero:true,max:100},
+            scaleLabel: {
+              display: true,
+              labelString: "Percentage of Total"
+          }
+          }
+        ]
       }
     }
   });
@@ -147,18 +158,25 @@ function initCharts() {
       datasets: [
         {
           label: selectedCountry.country,
-          type: "bar",
-          borderColor: "#8e5ea2",
-          data: getGDP(),
-          fill: false
+          type: "line",
+          borderColor: "#E11208",
+          yAxisID: "y-axis-1",
+          data: getGdpPerCapita(),
+          fill: false,
+          
         },
         {
           label: selectedCountry.country,
-          type: "line",
-          borderColor: "#E11208",
-          data: getGdpPerCapita(),
-          fill: false
+          type: "bar",
+          borderColor: "#6B8E23",
+          backgroundColor: "#6B8E23",
+          yAxisID: "y-axis-0",
+          data: getGDP(),
+          fill: false,
+          
+          
         }
+       
 
       ]
     },
@@ -167,7 +185,24 @@ function initCharts() {
         display: true,
         text: `GDP and GDP per capita for ${selectedCountry.country}`
       },
-      legend: { display: false }
+      legend: { display: false },
+      scales: {
+        yAxes: [{
+          position: "left",
+          id: "y-axis-0",
+          scaleLabel: {
+            display: true,
+            labelString: "GDP (in $ millions)"
+        }
+        }, {
+          position: "right",
+          id: "y-axis-1",
+          scaleLabel: {
+            display: true,
+            labelString: "GDP per Capita"
+        }
+        }]
+      }
     }
   });
 

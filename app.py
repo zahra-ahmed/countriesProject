@@ -13,6 +13,10 @@ def graphs():
 def map():
     return render_template("graphs.html")
 
+@app.route("/top")
+def top():
+    return render_template("topCountries.html")    
+
 @app.route("/api/gdp")
 def gdp_data():
   with open('./data/gdp.json') as f:
